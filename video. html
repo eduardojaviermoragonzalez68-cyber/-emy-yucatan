@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMY - ESTUDIOS MORA KUKULCAN | Estamos Mejorando Yucatán</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial, sans-serif;overflow:hidden}
+#portada{position:fixed;inset:0;z-index:9999;background:#000;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#portada video{width:100%;height:100%;object-fit:cover}
+#portada.clic{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,gold,#ff00ff);color:#000;padding:14px 28px;border-radius:30px;font-weight:900;font-family:'Orbitron';animation:pulse 1s infinite;box-shadow:0 0 25px gold;z-index:2}
+@keyframes pulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.05)}}
+#contenido{display:none;background:#080008;min-height:100vh;overflow:auto}
+#contenido.activa{display:block}
+.header{padding:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:#000;border-bottom:3px solid #ff00ff;box-shadow:0 0 15px #ff00ff}
+.logo{font-family:'Orbitron';color:#00ffff;border:2px solid #00ffff;padding:8px 14px;text-shadow:0 0 10px #00ffff;box-shadow:0 0 10px #00ffff}
+.btn{border:1px solid #fff;background:transparent;color:#fff;padding:7px 10px;font-size:0.8em;font-weight:900;cursor:pointer}
+.btn:hover{background:#fff;color:#000;box-shadow:0 0 15px #ff00ff}
+.neon-bar{display:flex;flex-wrap:wrap;gap:6px;padding:8px;justify-content:center;background:#111}
+.neon-bar span{border:1px solid #00ff00;color:#00ff00;padding:5px 10px;font-size:0.75em;text-shadow:0 0 5px #00ff00;cursor:pointer}
+.hero{padding:25px 15px;text-align:center;background:radial-gradient(circle,#1a0033,#000)}
+.hero h1{font-family:'Orbitron';font-size:1.8em;background:linear-gradient(90deg,#ff00ff,#00ffff,#ffff00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.xv{font-size:2.2em;color:#ff1493;text-shadow:0 0 10px #ff1493,0 0 30px #ff00ff;margin:15px 0;animation:glow 1s infinite alternate}
+@keyframes glow{to{text-shadow:0 0 25px #ff1493,0 0 50px #ff00ff}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;padding:15px}
+.card{border:2px solid #00ffff;background:#111;padding:12px;text-align:center;min-height:80px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.85em;cursor:pointer}
+.card:hover{transform:translateY(-3px);box-shadow:0 0 20px #ff00ff}
+.card.wha{background:#25D366;border-color:#25D366;box-shadow:0 0 15px #25D366}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:100;justify-content:center;align-items:center;padding:15px}
+.modal.activo{display:flex}
+.box{background:#0a0a0a;border:3px solid #ff00ff;padding:20px;max-width:500px;width:100%;box-shadow:0 0 30px #ff00ff;position:relative}
+.close{position:absolute;top:8px;right:12px;color:#ff00ff;font-size:1.5em;cursor:pointer}
+</style>
+</head>
+<body>
+
+<!-- VIDEO PORTADA - SU VIDEO FINAL -->
+<div id="portada" onclick="entrar()">
+<video autoplay muted loop playsinline poster="IMAGEN01JPG.jpg">
+<source src="video_final_EMKmp4" type="video/mp4">
+<source src="video.mp4" type="video/mp4">
+<source src="VIDEO_FINAL_EMKmp4" type="video/mp4">
+</video>
+<div class="clic">👆 TOCA PARA ENTRAR 👆</div>
+</div>
+
+<!-- PAGINA PRINCIPAL -->
+<div id="contenido">
+<div class="header">
+<div class="logo">EMY KUKULCAN</div>
+<button class="btn" onclick="modal('INICIO')">INICIO →</button>
+<button class="btn" onclick="modal('IGLESIAS')">IGLESIAS →</button>
+<button class="btn" onclick="modal('RESIDENCIAL')">RESIDENCIAL →</button>
+<button class="btn" onclick="modal('AYUNTAMIENTOS')">AYUNTAMIENTOS →</button>
+<button class="btn" onclick="modal('FRACC')">FRACCIONAMIENTOS →</button>
+</div>
+<div class="neon-bar">
+<span onclick="modal('LONAS')">LONAS</span>
+<span onclick="modal('CAMISAS')">CAMISAS</span>
+<span onclick="modal('GORRAS')">GORRAS</span>
+<span onclick="modal('PLAYERAS')">PLAYERAS</span>
+<span onclick="modal('BOLSAS')">BOLSAS</span>
+<span onclick="modal('MOCHILAS')">MOCHILAS</span>
+<span onclick="modal('FOLLETOS')">FOLLETOS</span>
+<span onclick="modal('VINIL')">VINIL</span>
+<span onclick="modal('NEON')">XV AÑOS NEÓN</span>
+<span onclick="modal('LOGOS')">LOGOS AUTOS</span>
+<span onclick="modal('VITRINAS')">VITRINAS</span>
+</div>
+<div class="hero">
+<h1>ESTUDIO MORA KUKULCAN<br>EMY - ESTAMOS MEJORANDO YUCATÁN</h1>
+<div class="xv">✨ XV AÑOS EN NEÓN ✨</div>
+<p>Empresa de Multiservicios Públicas de Yucatán S.A.S<br><br>
+<b style="color:gold">DISEÑO WEB PROGRAMADOR ANALÍTICO + IMPRESIÓN EN LONAS, CAMISAS, GORRAS, PLAYERAS, BOLSAS, MOCHILAS, FOLLETOS, VINIL, LOGOS PEGABLES PARA AUTOS, VITRINAS, LUCES DE NEÓN Y FLUORESCENTES</b><br><br>
+Facturamos desde un desyerbo hasta... Cotize sin compromiso.</p>
+<img src="IMAGEN01JPG.jpg" style="width:90%;max-width:350px;margin:15px 0;border:3px solid gold;box-shadow:0 0 20px gold;border-radius:10px">
+<img src="IMAGEN02.jpg" style="width:90%;max-width:350px;margin:10px 0;border:3px solid #00ffff;box-shadow:0 0 20px #00ffff;border-radius:10px">
+</div>
+<div class="grid">
+<div class="card" onclick="modal('EMAIL')">MÁNDAME TU EMAIL</div>
+<div class="card" onclick="window.open('https://facebook.com','_blank')">Facebook</div>
+<div class="card" onclick="modal('INSTA')">INSTAGRAM</div>
+<div class="card" onclick="modal('PRESU')">PRESUPUESTO</div>
+<div class="card wha" onclick="window.open('https://wa.me/529997646962?text=Hola%20Eduardo%20Mora%20vi%20tu%20pagina%20EMY%20🔥','_blank')">WHATSAPP<br>999-764-6962</div>
+<div class="card" onclick="modal('UBI')">MÁNDAME TU UBICACIÓN</div>
+<div class="card" style="background:gold;color:#000">SPEI DEPÓSITO</div>
+<div class="card" onclick="modal('FACT')">FACTURACIÓN</div>
+</div>
+</div>
+
+<div id="mod" class="modal" onclick="cerrar()"><div class="box" onclick="event.stopPropagation()"><span class="close" onclick="cerrar()">✕</span><div id="txt"></div></div></div>
+
+<script>
+function entrar(){document.getElementById('portada').style.display='none';document.getElementById('contenido').classList.add('activa');document.body.style.overflow='auto'}
+function modal(t){
+const d={INICIO:'<h2 style=color:#00ffff>INICIO</h2><p>Diseño web + impresión neón. EMY Yucatán.</p>',IGLESIAS:'<h2>IGLESIAS</h2><p>Poda, desyerbo, limpieza, lonas, neón para iglesias.</p>',LONAS:'<h2>🖨️ LONAS</h2><p>Lonas gran formato, XV años neón, ayuntamientos.</p>',CAMISAS:'<h2>👕 CAMISAS</h2><p>Camisa EMK blanca polo con bordado Kukulcan, como su video.</p>',GORRAS:'<h2>🧢 GORRAS</h2><p>Gorras bordadas EMK.</p>',NEON:'<h2 style=color:#ff1493>💡 XV AÑOS NEÓN</h2><p>Nombres en neón, luces fluorescentes, estilos diferentes para XV años.</p>',PRESU:'<h2>PRESUPUESTO</h2><a href=https://wa.me/529997646962 target=_blank style=display:block;padding:12px;background:#25D366;color:#fff;text-align:center;margin-top:10px;text-decoration:none>WHATSAPP 999-764-6962</a>'};
+document.getElementById('txt').innerHTML=d[t]||`<h2>${t}</h2><p>Servicio ${t}: Cotiza al WhatsApp 999-764-6962</p>`;
+document.getElementById('mod').classList.add('activo');
+}
+function cerrar(){document.getElementById('mod').classList.remove('activo')}
+</script>
+</body>
+</html>
