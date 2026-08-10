@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMY - EMK VIDEO OFICIAL</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMK - EDUARDO MORA</title>
 <style>
-*{margin:0;padding:0}body{background:#000;overflow:hidden}
-#portada{position:fixed;inset:0;background:#000}
-video{width:100%;height:100%;object-fit:cover}
-.boton{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);background:gold;color:#800;padding:15px 30px;border-radius:30px;font-weight:900;animation:blink 1s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.5}}
-#tienda{display:none;background:#fff;color:#000;min-height:100vh;padding:20px;text-align:center;overflow:auto}
+*{margin:0;padding:0}body{background:#000;overflow:hidden;font-family:Arial Black}
+#portada{position:fixed;inset:0;z-index:999;background:#000}
+#portada video{width:100%;height:100%;object-fit:cover}
+.btn{position:absolute;bottom:35px;left:50%;transform:translateX(-50%);background:gold;color:#7a0000;padding:16px 30px;border-radius:30px;font-size:1.4em;font-weight:900;box-shadow:0 0 20px gold;animation:b 1s infinite}
+@keyframes b{0%,100%{opacity:1}50%{opacity:.6}}
+#tienda{display:none;background:#f9f5e8;min-height:100vh;padding:20px;text-align:center;overflow:auto;color:#222}
 #tienda.ver{display:block}
 </style>
 </head>
 <body>
-<div id="portada" onclick="abrir()">
+<div id="portada" onclick="entrar()">
 <video autoplay muted loop playsinline>
 <source src="video_final_EMKmp4" type="video/mp4">
-<source src="video_final_EMK" type="video/mp4">
 </video>
-<div class="boton">👆 TOCA PARA ENTRAR 👆</div>
+<div class="btn">👆 TOCA PARA ENTRAR 👆</div>
 </div>
 
 <div id="tienda">
 <h1 style="color:#7a0000">EMK - ESTUDIOS MORA KUKULCAN</h1>
-<h3>ESTAMOS MEJORANDO YUCATÁN</h3>
-<img src="IMAGEN01JPG.jpg" style="width:90%;max-width:400px;border:3px solid gold;margin:10px">
-<img src="IMAGEN02.jpg" style="width:90%;max-width:400px;border:3px solid cyan;margin:10px">
-<p style="background:#000;color:gold;padding:15px;margin:15px 0">LONAS - CAMISAS - GORRAS - PLAYERAS - BOLSAS - MOCHILAS - FOLLETOS - VINIL - XV AÑOS NEÓN - LOGOS AUTOS - VITRINAS</p>
-<a href="https://wa.me/529997646962" style="background:#25D366;color:#fff;padding:15px 30px;display:inline-block;text-decoration:none;border-radius:10px;font-size:1.3em">WHATSAPP 999-764-6962</a>
+<h3>EMY - ESTAMOS MEJORANDO YUCATÁN</h3>
+<img src="IMAGEN01JPG.jpg" style="width:95%;max-width:400px;border:4px solid gold;border-radius:10px;margin:10px">
+<div style="background:#000;color:gold;padding:15px;margin:15px 0">LONAS - CAMISAS - GORRAS - PLAYERAS - BOLSAS - MOCHILAS - FOLLETOS - VINIL - XV AÑOS NEÓN</div>
+<img src="IMAGEN02.jpg" style="width:95%;max-width:400px;border:4px solid cyan;border-radius:10px;margin:10px">
+<br><a href="https://wa.me/529997646962" style="display:inline-block;background:#25D366;color:#fff;padding:16px 35px;border-radius:10px;text-decoration:none;font-size:1.4em;margin:20px 0">WHATSAPP 999-764-6962</a>
 </div>
 
 <script>
-function abrir(){
+function entrar(){
 document.getElementById('portada').style.display='none';
 document.getElementById('tienda').classList.add('ver');
 document.body.style.overflow='auto';
 }
 </script>
 </body>
-  </html>
+</html>
